@@ -15,9 +15,9 @@ module Paperclip
       @name = name
       @attachment = attachment
       if definition.is_a? Hash
-        @geometry = definition.delete(:geometry)
-        @format = definition.delete(:format)
-        @processors = definition.delete(:processors)
+        @geometry   = definition[:geometry]
+        @format     = definition[:format]
+        @processors = definition[:processors]
         @other_args = definition
       else
         @geometry, @format = [definition, nil].flatten[0..1]
